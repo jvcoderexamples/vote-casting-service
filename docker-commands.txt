@@ -1,0 +1,6 @@
+#build
+docker image build -t vote-casting-service:latest .
+#run
+docker run -d -p 8080:8080 vote-casting-service
+#publish
+docker push shahbaz175/vote-casting-service:latest
