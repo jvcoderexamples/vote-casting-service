@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vote-casting-service-deployment
+  labels:
+    app: vote-casting-service
+    type: frontend
+spec:
+  selector:
+    matchLabels:
+      app: voting-app
+      type: frontend
+  replicas: 1
+  template:
+    metadata:
+      name: vote-casting-service
+      labels:
+        app: voting-app
+        type: frontend
+    spec:
+      containers:
+        - name: vote-casting-service
+          image: shahbaz175/vote-casting-service
+          

@@ -1,6 +1,35 @@
+#dckr_pat_q-AqCNo_rBJqKllue59m5H04Vcg
+
+##Local commands--
 #build
 docker image build -t vote-casting-service:latest .
 #run
 docker run -d -p 8080:8080 vote-casting-service
+
+
+##Commands for docker hub
 #publish
 docker push shahbaz175/vote-casting-service:latest
+#pull image
+docker pull shahbaz175/vote-casting-service:latest
+#run
+docker run -d -p 8080:8080 shahbaz175/vote-casting-service
+
+
+
+ 
+-------------Commands for K8-------------
+kubectl create -f vote-cast-service-deployment.yaml
+kubectl get deployments
+kubectl get nodes
+kubectl get services
+kubectl get all
+kubectl describe deployment vote-casting-service-deployment
+kubectl delete deployment vote-casting-service-deployment
+
+minikube ssh docker pull shahbaz175/vote-casting-service
+
+
+kubectl describe pod vote-casting-service-deployment-56b54bd789-f6q4b 
+
+kubectl ImagePullBackOff error context deadline exceeded
